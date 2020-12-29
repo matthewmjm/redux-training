@@ -16,13 +16,15 @@ function App(props) {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos
+    todos: state.todos,
+    count: state.count
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTodo: (todo) => dispatch({type: "ADD_TODO", payload: todo})
+    addTodo: (todo) => dispatch({type: "ADD_TODO", payload: todo}),
+    increment: () => dispatch({type: "INCREMENT"})
   }
 }
 
