@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
+import {addTodo} from './actions/todos';
+import {count} from './actions/count';
 
 function App(props) {
 
@@ -23,8 +25,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTodo: (todo) => dispatch({type: "ADD_TODO", payload: todo}),
-    increment: () => dispatch({type: "INCREMENT"})
+    addTodo: (todo) => addTodo(todo, dispatch),
+    increment: () => count(dispatch)
   }
 }
 
